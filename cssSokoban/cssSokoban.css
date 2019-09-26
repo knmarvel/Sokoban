@@ -6,7 +6,7 @@ main{
 }
 
 
-#whereTheMazeGoes{
+#whereTheMapGoes{
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
@@ -20,6 +20,8 @@ main{
     width: 25px;
     align-items: center;
     flex: 0 0 auto;
+    background-image: url("../images/floor.png");
+    background-size: cover;
 }
 
 .pic{
@@ -34,7 +36,6 @@ main{
     margin: 0;
     padding: 0;
     border: 0;
-    background-color: lightgray;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,7 +44,7 @@ main{
 }
 
 .W  {
-    background-color: green;
+    background-image: url("../images/wall.png");
     margin: 0;
     padding: 0;
     border: 0;
@@ -52,7 +53,7 @@ main{
 
 
 .O   {
-    background-color: darkslategray;
+    background-image: url("../images/button.png");
     margin: 0;
     padding: 0;
     border: 0;
@@ -65,11 +66,16 @@ main{
     border: 0;
 }
 
-.B   {
-    background-color: yellow;
+.box1Token, .box2Token, .box3Token, .box4Token, .box5Token, .box6Token   {
+    background-image: url("../images/block.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
     border: 0;
+    height: 25px;
+    width: 25px;
+    color: transparent;
 }
 
 
@@ -79,5 +85,7 @@ main{
     border: 0;
     height: 25px;   
     width: 25px;
-    background-color: red;
+    color: transparent;
+    background-image: url("../images/chipdown.png");
+    background-size: cover;
 }

@@ -5,7 +5,7 @@ const  map = [
     "WWW BOW ",  
     "WOWWB W ",  
     "W W O WW",  
-    "WB XBBOW",  
+    "WB OBBOW",  
     "W   O  W",  
     "WWWWWWWW"  
   ];
@@ -13,14 +13,33 @@ const  map = [
 createRows();
 let playerRow = 2;
 let playerColumn = 2;
-createPlayer(playerRow,playerColumn);
-console.log(playerRow, playerColumn)
+createPiece(playerRow,playerColumn,"player");
+let box1Row = 2;
+let box1Column = 3;
+createPiece(box1Row,box1Column,"box1");
+let box2Row = 3;
+let box2Column = 4;
+createPiece(box2Row,box2Column,"box2");
+let box3Row = 6;
+let box3Column = 1;
+createPiece(box3Row,box3Column,"box3");
+let box4Row = 6;
+let box4Column = 3;
+createPiece(box4Row,box4Column,"box4");
+let box5Row = 6;
+let box5Column = 4;
+createPiece(box5Row,box5Column,"box5");
+let box6Row = 6;
+let box6Column = 5;
+createPiece(box6Row,box6Column,"box6");
+
+
 document.addEventListener('keydown', playerDirections)
 
 function createRows(){
     for(let rowCounter = 0; rowCounter < map.length; rowCounter ++) {
         let divId = "row" + rowCounter;
-      createDivElement(divId, "row"," ", "whereTheMazeGoes")
+      createDivElement(divId, "row"," ", "whereTheMapGoes")
       createCellValues(rowCounter, divId);
     }
 }
@@ -41,12 +60,13 @@ function createDivElement(divCoordinates, className, className2, parentDivId) {
     
     }
 
-function createPlayer(horizontal, vertical) {
+function createPiece(horizontal, vertical, pieceType) {
     let divId = "Row" + horizontal + " " + "Cell" + vertical;
     divElement = document.createElement("div");
-    divElement.id = "playerToken";
-    divElement.className = "playerToken";
-    divElement.innerHTML = '<img src="images/player.png" height ="25px" alt = "player token">';
+    pieceName = pieceType + "Token"
+    divElement.id = pieceName
+    divElement.className = pieceName
+    divElement.innerHTML = pieceName
     document.getElementById(divId).appendChild(divElement);
 
 
@@ -57,70 +77,39 @@ function createPlayer(horizontal, vertical) {
 function playerDirections(e) {
     if ( e.code === "ArrowDown")    {
         console.log("down",playerRow,playerColumn)
-        down()}
+        let playerRowCheck = playerRow+1;
+        let playerColumnCheck = playerColumn;
+        movePlayer(playerRowCheck, playerColumnCheck)}
     else if ( e.code === "ArrowUp")    {
         console.log("up",playerRow,playerColumn)
-        up()}
+        let playerRowCheck = playerRow-1;
+        let playerColumnCheck = playerColumn;
+        movePlayer(playerRowCheck, playerColumnCheck)}
     else if ( e.code === "ArrowLeft")    {
         console.log("left",playerRow,playerColumn)
-        left();}
+        let playerRowCheck = playerRow;
+        let playerColumnCheck = playerColumn-1;
+        movePlayer(playerRowCheck, playerColumnCheck)}
     else if ( e.code === "ArrowRight")    {
         console.log("right",playerRow,playerColumn)
-        right()
-    }
-    else {
-        alert("That's not an arrow key.")
+        let playerRowCheck = playerRow;
+        let playerColumnCheck = playerColumn+1;
+        movePlayer(playerRowCheck, playerColumnCheck)
     }
 }
 
 
-function down(){
-    let playerRowCheck = playerRow+1;
-    let playerColumnCheck = playerColumn;
-    console.log(playerRowCheck, playerColumnCheck);
+function movePlayer(playerRowCheck, playerColumnCheck){
     if(checkForWallWin(playerRowCheck,playerColumnCheck) === "")   {
         playerRow = playerRowCheck;
         playerColumn = playerColumnCheck
-        movePlayer (playerRow, playerColumn);
+        movePiece (playerRow, playerColumn, "player");
     }
 
 }
 
-function up(){
-    let playerRowCheck = playerRow-1;
-    let playerColumnCheck = playerColumn;
-    console.log(playerRowCheck, playerColumnCheck);
-    if(checkForWallWin(playerRowCheck,playerColumnCheck) === "")   {
-        playerRow = playerRowCheck;
-        playerColumn = playerColumnCheck
-        movePlayer (playerRow, playerColumn);
-    }
 
-}
 
-function left(){
-    let playerRowCheck = playerRow;
-    let playerColumnCheck = playerColumn-1;
-    console.log(playerRowCheck, playerColumnCheck);
-    if(checkForWallWin(playerRowCheck,playerColumnCheck) === "")   {
-        playerRow = playerRowCheck;
-        playerColumn = playerColumnCheck
-        movePlayer (playerRow, playerColumn);
-    }
-
-}
-function right(){
-    console.log(playerRow, playerColumn)
-    let playerRowCheck = playerRow;
-    let playerColumnCheck = playerColumn+1;
-    console.log(playerRowCheck, playerColumnCheck);
-    if(checkForWallWin(playerRowCheck,playerColumnCheck) === "")   {
-        playerRow = playerRowCheck;
-        playerColumn = playerColumnCheck;
-        movePlayer (playerRow, playerColumn);
-    }
-
-}
 let wallWinChecker = "";
 function checkForWallWin(playerRowCheck, playerColumnCheck) {
     wallWinChecker = map[playerRowCheck].charAt(playerColumnCheck);
@@ -139,9 +128,10 @@ function checkForWallWin(playerRowCheck, playerColumnCheck) {
    }
 }
 
-function movePlayer(horizontal, vertical)   {
+function movePiece(horizontal, vertical, pieceName)   {
     let divId = "Row" + horizontal + " " + "Cell" + vertical;
-    let player = document.getElementById("playerToken");
-    document.getElementById(divId).appendChild(player);
+    let pieceNameToken = pieceName + "Token"
+    let piece = document.getElementById(pieceNameToken);
+    document.getElementById(divId).appendChild(piece);
 
 }
