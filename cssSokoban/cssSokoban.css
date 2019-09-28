@@ -6,6 +6,7 @@ main{
 }
 
 
+
 #whereTheMapGoes{
     display: flex;
     flex-direction: column;
@@ -66,26 +67,37 @@ main{
     border: 0;
 }
 
-.box1Token, .box2Token, .box3Token, .box4Token, .box5Token, .box6Token   {
-    background-image: url("../images/block.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+
+
+
+
+.lightOff  {
     margin: 0;
     padding: 0;
     border: 0;
     height: 25px;
     width: 25px;
-    color: transparent;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    border: 2px solid black; 
+    border-radius: 50%;
+    background-color: white;
+
 }
-
-
-.playerToken    {
+.lightOn  {
     margin: 0;
     padding: 0;
     border: 0;
-    height: 25px;   
+    height: 25px;
     width: 25px;
-    color: transparent;
-    background-image: url("../images/chipdown.png");
-    background-size: cover;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    border: 2px solid black; 
+    border-radius: 50%;
+    background-color: green;
+
 }
