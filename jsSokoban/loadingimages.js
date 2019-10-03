@@ -250,6 +250,7 @@ const row9column5 = {
 const row9column6 = {
     rowCoordinate: 9, columnCoordinate: 6, floorOrWall: 0, isPlayer: 0, isBox: 0, isButton: 0,type: 1,power:0,
 }
+
 const row0 = [
     row0column0,
     row0column1,
@@ -258,20 +259,18 @@ const row0 = [
     row0column4,
     row0column5,
     row0column6,
-    row0column7,
-
-]
+    row0column7]
 const row1 = [
-    row1column0,
-    row1column1,
-    row1column2,
-    row1column3,
-    row1column4,
-    row1column5,
-    row1column6,
-    row1column7,
+       row1column0,
+        row1column1,
+        row1column2,
+        row1column3,
+        row1column4,
+        row1column5,
+        row1column6,
+        row1column7
 
-]
+    ]
 const row2 = [
     row2column0,
     row2column1,
@@ -281,98 +280,104 @@ const row2 = [
     row2column5,
     row2column6,
     row2column7,
-
 ]
 const row3 = [
-    row3column0,
-    row3column1,
-    row3column2,
-    row3column3,
-    row3column4,
-    row3column5,
-    row3column6,
-    row3column7,
-
+    
+        row3column0,
+        row3column1,
+        row3column2,
+        row3column3,
+        row3column4,
+        row3column5,
+        row3column6,
+        row3column7,
+    
+    
 ]
 const row4 = [
-    row4column0,
-    row4column1,
-    row4column2,
-    row4column3,
-    row4column4,
-    row4column5,
-    row4column6,
-    row4column7,
-
+    
+        row4column0,
+        row4column1,
+        row4column2,
+        row4column3,
+        row4column4,
+        row4column5,
+        row4column6,
+        row4column7,
+    
 ]
 const row5 = [
-    row5column0,
-    row5column1,
-    row5column2,
-    row5column3,
-    row5column4,
-    row5column5,
-    row5column6,
-    row5column7,
-
+    
+        row5column0,
+        row5column1,
+        row5column2,
+        row5column3,
+        row5column4,
+        row5column5,
+        row5column6,
+        row5column7,
+    
+    
 ]
 const row6 = [
-    row6column0,
-    row6column1,
-    row6column2,
-    row6column3,
-    row6column4,
-    row6column5,
-    row6column6,
-    row6column7,
-
+    
+        row6column0,
+        row6column1,
+        row6column2,
+        row6column3,
+        row6column4,
+        row6column5,
+        row6column6,
+        row6column7,
+    
+    
 ]
 const row7 = [
-    row7column0,
-    row7column1,
-    row7column2,
-    row7column3,
-    row7column4,
-    row7column5,
-    row7column6,
-    row7column7,
-
+    
+        row7column0,
+        row7column1,
+        row7column2,
+        row7column3,
+        row7column4,
+        row7column5,
+        row7column6,
+        row7column7,
+    
+    
 ]
 const row8 = [
-    row8column0,
-    row8column1,
-    row8column2,
-    row8column3,
-    row8column4,
-    row8column5,
-    row8column6,
-    row8column7,
-
+    
+        row8column0,
+        row8column1,
+        row8column2,
+        row8column3,
+        row8column4,
+        row8column5,
+        row8column6,
+        row8column7
 ]
-
-
-const row9 = [
+const row9 =  [   
     row9column0,
     row9column1,
     row9column2,
     row9column3,
     row9column4,
     row9column5,
-    row9column6,
-]
-const mapConversion = [
-    row0,
-    row1,
-    row2,
-    row3,
-    row4,
-    row5,
-    row6,
-    row7,
-    row8,
-    row9,
-]
+    row9column6]
 
+const mapConversion = [
+        row0,
+        row1,
+        row2,
+        row3,
+        row4,
+        row5,
+        row6,
+        row7,
+        row8,
+        row9,
+]
+console.log(mapConversion)
 
 const  map = [  
     "  WWWWW ",  //0
